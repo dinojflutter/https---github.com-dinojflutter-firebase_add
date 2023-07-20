@@ -3,12 +3,9 @@ import 'package:flutter/material.dart';
 class BottomText extends StatelessWidget {
   final String title;
   final VoidCallback ontap;
+  final bool loading;
 
-  const BottomText({
-    required this.title,
-    required this.ontap,
-    super.key,
-  });
+  BottomText({required this.title, required this.ontap, this.loading = false});
 
   @override
   Widget build(BuildContext context) {
@@ -19,11 +16,17 @@ class BottomText extends StatelessWidget {
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(18), color: Colors.deepPurple),
         child: Center(
-            child: Text(
-          title,
-          style: TextStyle(
-              fontWeight: FontWeight.bold, fontSize: 20, color: Colors.white),
-        )),
+            child: loading
+                ? CircularProgressIndicator(
+                    color: Colors.white,
+                  )
+                : Text(
+                    title,
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
+                        color: Colors.white),
+                  )),
       ),
     );
   }
