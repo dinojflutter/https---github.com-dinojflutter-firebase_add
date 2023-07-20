@@ -6,10 +6,10 @@ class utilies {
     Fluttertoast.showToast(
         msg: Message,
         toastLength: Toast.LENGTH_SHORT,
-        gravity: ToastGravity.CENTER,
+        gravity: ToastGravity.BOTTOM,
         timeInSecForIosWeb: 1,
-        backgroundColor: Colors.amber,
-        fontSize: 30,
+        backgroundColor: Colors.teal,
+        fontSize: 18,
         textColor: Colors.white);
   }
 }
