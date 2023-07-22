@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 
 import 'package:firebase_new1/Pages/post_screen.dart';
+import 'package:firebase_new1/UI/Auth/Login_with_Phonenumber.dart';
 import 'package:firebase_new1/Utilies/utilies.dart';
 import 'package:flutter/material.dart';
 
@@ -85,8 +86,8 @@ class _LoginscreenState extends State<Loginscreen> {
                       padding: const EdgeInsets.all(5.0),
                       child: TextFormField(
                         keyboardType: TextInputType.emailAddress,
-                        decoration: InputDecoration(
-                            prefixIcon: const Icon(Icons.email),
+                        decoration: const InputDecoration(
+                            prefixIcon: Icon(Icons.email),
                             hintText: "Email",
                             border: InputBorder.none),
                         controller: _emailcontroller,
@@ -152,16 +153,31 @@ class _LoginscreenState extends State<Loginscreen> {
             children: [
               Text("Don`t have an account ?"),
               GestureDetector(
-                  onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Signuppage()));
-                  },
-                  child: Text(
-                    "Sign up",
-                    style: TextStyle(color: Colors.blue),
-                  )),
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Signuppage()));
+                },
+                child: Text(
+                  "Sign up",
+                  style: TextStyle(color: Colors.blue),
+                ),
+              ),
             ],
-          )
+          ),
+          SizedBox(
+            height: 30,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 25),
+            child: BottomText(
+                ontap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const PhoneNumber()));
+                },
+                title: "Login with Phone Number"),
+          ),
         ],
       ),
     );

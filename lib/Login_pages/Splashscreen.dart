@@ -14,7 +14,6 @@ class _Splash_screenState extends State<Splash_screen> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     splash_screen.islogin(context);
   }
@@ -22,10 +21,6 @@ class _Splash_screenState extends State<Splash_screen> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      // appBar: AppBar(
-      //   elevation: 3,
-      //   title: const Text(" Splash Screen"),
-      // ),
       body: Center(
         child: Text(
           "Firebase App",

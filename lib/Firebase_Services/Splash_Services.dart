@@ -9,11 +9,9 @@ import '../Homepage/Login_screen.dart';
 
 class Splashservices {
   void islogin(BuildContext context) {
-    final auth = FirebaseAuth.instance;
+    final auth = FirebaseAuth.instance.currentUser;
 
-    final user = auth.currentUser;
-
-    if (user != null) {
+    if (auth != null) {
       Timer(
           const Duration(seconds: 2),
           () => Navigator.push(context,

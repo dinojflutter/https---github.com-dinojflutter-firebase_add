@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_new1/Homepage/Login_screen.dart';
+import 'package:firebase_new1/Utilies/utilies.dart';
 import 'package:flutter/material.dart';
 
 class Postscreen extends StatefulWidget {
@@ -30,6 +31,8 @@ class _PostscreenState extends State<Postscreen> {
                       context,
                       MaterialPageRoute(
                           builder: (context) => const Loginscreen()));
+                }).onError((error, stackTrace) {
+                  utilies().toastMessages(error.toString());
                 });
               },
               icon: Icon(Icons.logout))
